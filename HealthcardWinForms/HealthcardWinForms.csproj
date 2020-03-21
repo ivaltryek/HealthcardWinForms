@@ -56,6 +56,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseContext.cs" />
+    <Compile Include="Migrations\202003211738590_user_3.cs" />
+    <Compile Include="Migrations\202003211738590_user_3.Designer.cs">
+      <DependentUpon>202003211738590_user_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003211755126_user_4.cs" />
+    <Compile Include="Migrations\202003211755126_user_4.Designer.cs">
+      <DependentUpon>202003211755126_user_4.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +88,12 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Migrations\202003211738590_user_3.resx">
+      <DependentUpon>202003211738590_user_3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003211755126_user_4.resx">
+      <DependentUpon>202003211755126_user_4.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -22,8 +22,9 @@ namespace HealthcardWinForms.Models
         public string Email { get; set; }
         public string Mobile { get; set; }
         public string gender { get; set; }
+        [MaxLength(2048)]
         public string password { get; set; }
-        public int age { get; set; }
+        public string age { get; set; }
 
 
     }

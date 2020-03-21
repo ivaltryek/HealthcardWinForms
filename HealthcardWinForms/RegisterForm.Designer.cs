@@ -46,8 +46,8 @@
             this.passwordLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.genderGroupBox = new System.Windows.Forms.GroupBox();
-            this.femaleRadioButton = new System.Windows.Forms.RadioButton();
-            this.maleRadioButton = new System.Windows.Forms.RadioButton();
+            this.Female = new System.Windows.Forms.RadioButton();
+            this.Male = new System.Windows.Forms.RadioButton();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.confirmPasswordLabel = new System.Windows.Forms.Label();
             this.confirmPasswordtTextBox = new System.Windows.Forms.TextBox();
@@ -164,6 +164,7 @@
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(274, 22);
             this.email.TabIndex = 14;
+            this.email.Leave += new System.EventHandler(this.email_Leave);
             // 
             // mobileNoLabel
             // 
@@ -185,6 +186,7 @@
             this.mobileTextBox.Name = "mobileTextBox";
             this.mobileTextBox.Size = new System.Drawing.Size(274, 22);
             this.mobileTextBox.TabIndex = 16;
+            this.mobileTextBox.Leave += new System.EventHandler(this.mobileTextBox_Leave);
             // 
             // label1
             // 
@@ -206,6 +208,7 @@
             this.ageTextBox.Name = "ageTextBox";
             this.ageTextBox.Size = new System.Drawing.Size(274, 22);
             this.ageTextBox.TabIndex = 18;
+            this.ageTextBox.Leave += new System.EventHandler(this.ageTextBox_Leave);
             // 
             // passwordLabel
             // 
@@ -234,35 +237,36 @@
             // genderGroupBox
             // 
             this.genderGroupBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.genderGroupBox.Controls.Add(this.femaleRadioButton);
-            this.genderGroupBox.Controls.Add(this.maleRadioButton);
+            this.genderGroupBox.Controls.Add(this.Female);
+            this.genderGroupBox.Controls.Add(this.Male);
             this.genderGroupBox.Location = new System.Drawing.Point(618, 223);
             this.genderGroupBox.Name = "genderGroupBox";
             this.genderGroupBox.Size = new System.Drawing.Size(274, 36);
             this.genderGroupBox.TabIndex = 21;
             this.genderGroupBox.TabStop = false;
+            this.genderGroupBox.Leave += new System.EventHandler(this.genderGroupBox_Leave);
             // 
-            // femaleRadioButton
+            // Female
             // 
-            this.femaleRadioButton.AutoSize = true;
-            this.femaleRadioButton.Location = new System.Drawing.Point(115, 9);
-            this.femaleRadioButton.Name = "femaleRadioButton";
-            this.femaleRadioButton.Size = new System.Drawing.Size(75, 21);
-            this.femaleRadioButton.TabIndex = 1;
-            this.femaleRadioButton.TabStop = true;
-            this.femaleRadioButton.Text = "Female";
-            this.femaleRadioButton.UseVisualStyleBackColor = true;
+            this.Female.AutoSize = true;
+            this.Female.Location = new System.Drawing.Point(115, 9);
+            this.Female.Name = "Female";
+            this.Female.Size = new System.Drawing.Size(75, 21);
+            this.Female.TabIndex = 1;
+            this.Female.TabStop = true;
+            this.Female.Text = "Female";
+            this.Female.UseVisualStyleBackColor = true;
             // 
-            // maleRadioButton
+            // Male
             // 
-            this.maleRadioButton.AutoSize = true;
-            this.maleRadioButton.Location = new System.Drawing.Point(7, 9);
-            this.maleRadioButton.Name = "maleRadioButton";
-            this.maleRadioButton.Size = new System.Drawing.Size(59, 21);
-            this.maleRadioButton.TabIndex = 0;
-            this.maleRadioButton.TabStop = true;
-            this.maleRadioButton.Text = "Male";
-            this.maleRadioButton.UseVisualStyleBackColor = true;
+            this.Male.AutoSize = true;
+            this.Male.Location = new System.Drawing.Point(7, 9);
+            this.Male.Name = "Male";
+            this.Male.Size = new System.Drawing.Size(59, 21);
+            this.Male.TabIndex = 0;
+            this.Male.TabStop = true;
+            this.Male.Text = "Male";
+            this.Male.UseVisualStyleBackColor = true;
             // 
             // passwordTextBox
             // 
@@ -295,6 +299,7 @@
             this.confirmPasswordtTextBox.Size = new System.Drawing.Size(274, 22);
             this.confirmPasswordtTextBox.TabIndex = 24;
             this.confirmPasswordtTextBox.UseSystemPasswordChar = true;
+            this.confirmPasswordtTextBox.Leave += new System.EventHandler(this.confirmPasswordtTextBox_Leave);
             // 
             // registerButton
             // 
@@ -381,8 +386,8 @@
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox genderGroupBox;
-        private System.Windows.Forms.RadioButton femaleRadioButton;
-        private System.Windows.Forms.RadioButton maleRadioButton;
+        private System.Windows.Forms.RadioButton Female;
+        private System.Windows.Forms.RadioButton Male;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Label confirmPasswordLabel;
         private System.Windows.Forms.TextBox confirmPasswordtTextBox;

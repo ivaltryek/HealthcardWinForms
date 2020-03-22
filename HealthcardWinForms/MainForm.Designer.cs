@@ -95,6 +95,7 @@
             this.loginButton.TabIndex = 10;
             this.loginButton.Text = "Log In";
             this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // passwordTextBox
             // 
@@ -104,6 +105,7 @@
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(274, 22);
             this.passwordTextBox.TabIndex = 9;
+            this.passwordTextBox.UseSystemPasswordChar = true;
             // 
             // passwordLabel
             // 

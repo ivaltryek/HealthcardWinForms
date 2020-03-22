@@ -56,10 +56,7 @@ namespace HealthcardWinForms
 
 
 
-                    //Decryption of password
-                    //byte[] data1 = Convert.FromBase64String(ciphertext);
-                    //byte[] decrypted = ProtectedData.Unprotect(data1, null, DataProtectionScope.CurrentUser);
-                    //MessageBox.Show(Encoding.Unicode.GetString(decrypted), "Decrypted");
+                   
                     try
                     {
                         var newUser = new User()
@@ -100,7 +97,7 @@ namespace HealthcardWinForms
                 int count = data.ToString().Count(char.IsDigit);
                 if (count < 10)
                 {
-                    MessageBox.Show("Invalid mobile number. "+count, "ValidationError", MessageBoxButtons.OK,
+                    MessageBox.Show("Invalid mobile number. ", "ValidationError", MessageBoxButtons.OK,
                    MessageBoxIcon.Error);
                 }
                

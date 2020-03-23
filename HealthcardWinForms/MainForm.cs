@@ -17,6 +17,8 @@ namespace HealthcardWinForms
         public MainForm()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(150, 150);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -27,9 +29,19 @@ namespace HealthcardWinForms
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
+            if(loginButton.Text == "Logout")
+            {
+                
+                    UserInfo.UserEmail = null;
+                    UserInfo.UserName = null;
+                    UserInfo.UserType = null;
+                    Close();
+                   
+            }
            using(var databaseContext = new DatabaseContext())
             {
                 User user = databaseContext.Users.Where(u => u.Email == emailTextBox.Text.ToString()).FirstOrDefault<User>();
+
                 if(user == null)
                 {
                     MessageBox.Show("User with email "+ emailTextBox.Text.ToString() + "not found");
@@ -37,7 +49,7 @@ namespace HealthcardWinForms
                 else
                 {
                     //Decryption of password
-                    byte[] data = Convert.FromBase64String(user.password.ToString());
+                    byte[] data = Convert.FromBase64String(user.Password.ToString());
                     byte[] decrypted = ProtectedData.Unprotect(data, null, DataProtectionScope.CurrentUser);
                     if(Encoding.Unicode.GetString(decrypted) == passwordTextBox.Text.ToString())
                     {
@@ -50,11 +62,35 @@ namespace HealthcardWinForms
                         emailTextBox.Clear();
                         passwordTextBox.Clear();
 
+
+                        if (UserInfo.UserEmail != null)
+                        {
+                            loginButton.Text = "Logout";
+                            emailTextBox.Enabled = false;
+                            passwordTextBox.Enabled = false;
+                            registerButton.Enabled = false;
+                        }
+
+                        DocDetails docDetails = databaseContext.DocDetails.Where(a => a.Doctor == UserInfo.UserEmail).FirstOrDefault<DocDetails>();
+                        if (docDetails == null)
+                        {
+                            DocExtraDetails docExtraDetails = new DocExtraDetails();
+                            docExtraDetails.Tag = this;
+                            docExtraDetails.ShowDialog(this);
+                            //this.Enabled = false;
+                            
+                        }
+                        else
+                        {
+                            HomeForm homeForm = new HomeForm();
+                            homeForm.Tag = this;
+                            homeForm.ShowDialog(this);
+                            //this.Enabled = false;
+
+                        }
+
                         //Redirecting to Home Form if user gets logged in.
-                        HomeForm homeForm = new HomeForm();
-                        homeForm.Tag = this;
-                        homeForm.Show(this);
-                        Hide();
+
                     } 
                     else
                     {
@@ -62,7 +98,7 @@ namespace HealthcardWinForms
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-            }
+            } 
         }
 
         private void LogInLabel_Click(object sender, EventArgs e)
@@ -74,9 +110,15 @@ namespace HealthcardWinForms
         {
             RegisterForm registerForm = new RegisterForm();
             registerForm.Tag = this;
-            registerForm.Show(this);
+            registerForm.ShowDialog(this);
             Hide();
             
+        }
+
+        private void MainForm_Click(object sender, EventArgs e)
+        {
+            //this.Enabled = NavigationInfo.IsMainFrameEnabled ? true : false;
+
         }
     }
 }

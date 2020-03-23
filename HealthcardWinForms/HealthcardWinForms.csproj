@@ -56,6 +56,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseContext.cs" />
+    <Compile Include="DocExtraDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocExtraDetails.Designer.cs">
+      <DependentUpon>DocExtraDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalInfos\NavigationInfo.cs" />
     <Compile Include="GlobalInfos\UserInfo.cs" />
     <Compile Include="HomeForm.cs">
       <SubType>Form</SubType>
@@ -63,14 +70,11 @@
     <Compile Include="HomeForm.Designer.cs">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202003211738590_user_3.cs" />
-    <Compile Include="Migrations\202003211738590_user_3.Designer.cs">
-      <DependentUpon>202003211738590_user_3.cs</DependentUpon>
+    <Compile Include="Migrations\202003221659596_initial.cs" />
+    <Compile Include="Migrations\202003221659596_initial.Designer.cs">
+      <DependentUpon>202003221659596_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202003211755126_user_4.cs" />
-    <Compile Include="Migrations\202003211755126_user_4.Designer.cs">
-      <DependentUpon>202003211755126_user_4.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Models\DocDetails.cs" />
     <Compile Include="RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,38 +87,24 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202003210953199_user.cs" />
-    <Compile Include="Migrations\202003210953199_user.Designer.cs">
-      <DependentUpon>202003210953199_user.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003211137344_user_2.cs" />
-    <Compile Include="Migrations\202003211137344_user_2.Designer.cs">
-      <DependentUpon>202003211137344_user_2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DocExtraDetails.resx">
+      <DependentUpon>DocExtraDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003211738590_user_3.resx">
-      <DependentUpon>202003211738590_user_3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003211755126_user_4.resx">
-      <DependentUpon>202003211755126_user_4.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003221659596_initial.resx">
+      <DependentUpon>202003221659596_initial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003210953199_user.resx">
-      <DependentUpon>202003210953199_user.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003211137344_user_2.resx">
-      <DependentUpon>202003211137344_user_2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

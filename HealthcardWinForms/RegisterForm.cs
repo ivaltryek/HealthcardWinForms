@@ -18,12 +18,17 @@ namespace HealthcardWinForms
         public RegisterForm()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(150, 150);
         }
 
         private void RegisterForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            var mainForm = (MainForm)Tag;
-            mainForm.Show();
+            
+                var mainForm = (MainForm)Tag;
+                mainForm.Show();
+            
+            
             // this.Close();
         }
 
@@ -64,13 +69,11 @@ namespace HealthcardWinForms
                             Firstname = firstNameTextBox.Text.ToString(),
                             Lastname = lastNameTextBox.Text.ToString(),
                             UserType = userTypeComboBox.SelectedItem.ToString(),
-                            gender = genderGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Name,
+                            Gender = genderGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Name,
                             Mobile = mobileTextBox.Text.ToString(),
                             Email = email.Text.ToString(),
-                            password = converted,
-                            age = ageTextBox.Text.ToString()
-
-
+                            Password = converted,
+                            Age = ageTextBox.Text.ToString(),
                         };
                         databaseContext.Users.Add(newUser);
                         databaseContext.SaveChanges();

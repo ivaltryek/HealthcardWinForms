@@ -39,6 +39,14 @@ namespace HealthcardWinForms
                     autoCompleteStringCollection.Add(name.Firstname + " " + name.Lastname + " (" + name.UniqueID + ")");
                 }
                 ToPatientTextBox.AutoCompleteCustomSource = autoCompleteStringCollection;
+
+                AutoCompleteStringCollection autoCompleteStringCollection1 = new AutoCompleteStringCollection();
+                var medlist = databaseContext.MedNames.ToList();
+                foreach (var med in medlist)
+                {
+                    autoCompleteStringCollection1.Add(med.MedicineName);
+                }
+                MedicineNameTextBox.AutoCompleteCustomSource = autoCompleteStringCollection1;
             }
         }
 
@@ -68,7 +76,7 @@ namespace HealthcardWinForms
 
             catch (System.IndexOutOfRangeException)
             {
-                MessageBox.Show("Please enter the patient name in respective field.", "ValidationError", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter the patient name in respective field and the patient name should be from the dropdown box.", "ValidationError", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception) { }
             
@@ -120,6 +128,16 @@ namespace HealthcardWinForms
             {
                 using(DatabaseContext databaseContext = new DatabaseContext())
                 {
+                    var medObject = databaseContext.MedNames.Where(m => m.MedicineName == medicineName).FirstOrDefault<MedName>();
+                    if (medObject == null)
+                    {
+                        MedName medName = new MedName()
+                        {
+                            MedicineName = medicineName,
+                            AddedBy = UserInfo.UserEmail
+                        };
+                        databaseContext.MedNames.Add(medName);
+                    }
                     medicine = new Medicine();
                     medicine.AfterNoonDose = afternoonDose;
                     medicine.Days = Convert.ToInt32(DaysTextBox.Text);
@@ -147,20 +165,31 @@ namespace HealthcardWinForms
 
         private void PrescriptionForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            using(DatabaseContext databaseContext = new DatabaseContext())
+            try
             {
-                MessageBox.Show("Whole Prescription has been saved successfully.!" , "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Prescription prescription = new Prescription();
-                prescription.MedicineID = UserInfo.medicineIDHelper;
-                prescription.PatientID = UserInfo.TempPatientIDForDoctor;
-                prescription.DoctorEmail = UserInfo.UserEmail;
-                prescription.PatientName = ToPatientTextBox.Text.ToString().Split('(')[0];
-                prescription.DoctorHospital = UserInfo.DoctorHospitalName;
-                prescription.DoctorName = UserInfo.UserName + " " + UserInfo.UserLastName;
-                //MessageBox.Show(prescription.PatientName + " " + UserInfo.DoctorHospitalName);
-                databaseContext.Prescriptions.Add(prescription);
-                databaseContext.SaveChanges();
+                using (DatabaseContext databaseContext = new DatabaseContext())
+                {
+                    Prescription prescription = new Prescription();
+                    prescription.MedicineID = UserInfo.medicineIDHelper;
+                    prescription.PatientID = UserInfo.TempPatientIDForDoctor;
+                    prescription.DoctorEmail = UserInfo.UserEmail;
+                    prescription.PatientName = ToPatientTextBox.Text.ToString().Split('(')[0];
+                    prescription.DoctorHospital = UserInfo.DoctorHospitalName;
+                    prescription.DoctorName = UserInfo.UserName + " " + UserInfo.UserLastName;
+                    prescription.Date = DateTime.Now.ToShortDateString();
+                    //MessageBox.Show(prescription.PatientName + " " + UserInfo.DoctorHospitalName);
+                    databaseContext.Prescriptions.Add(prescription);
+                    databaseContext.SaveChanges();
+                    MessageBox.Show("Whole Prescription has been saved successfully.!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
             }
+            catch(Exception )
+            {
+                MessageBox.Show("It seems you're leaving without saving the medicines, current data won't be saved" ,
+                    "ExceptionOccurred", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+           
         }
 
         private void PrescriptionForm_FormClosed(object sender, FormClosedEventArgs e)

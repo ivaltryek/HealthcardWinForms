@@ -32,7 +32,7 @@ namespace HealthcardWinForms
                         listViewItem.SubItems.Add(pItem.PatientID.ToString());
                         listViewItem.SubItems.Add(pItem.PatientName.ToString());
                         listViewItem.SubItems.Add(pItem.MedicineID.ToString());
-                        
+                        listViewItem.SubItems.Add(pItem.Date.ToString());
                         PrescriptionListView.Items.Add(listViewItem);
                     }
                 }

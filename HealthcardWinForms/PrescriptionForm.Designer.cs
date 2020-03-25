@@ -36,31 +36,29 @@
             this.MedicineLabel = new System.Windows.Forms.Label();
             this.MedicineNameTextBox = new System.Windows.Forms.TextBox();
             this.ToPatientLabel = new System.Windows.Forms.Label();
-            this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
-            this.entityCommand2 = new System.Data.Entity.Core.EntityClient.EntityCommand();
             this.ToPatientTextBox = new System.Windows.Forms.TextBox();
             this.MorningDoseLabel = new System.Windows.Forms.Label();
             this.MorningDoseGroupBox = new System.Windows.Forms.GroupBox();
-            this.one = new System.Windows.Forms.RadioButton();
-            this.two = new System.Windows.Forms.RadioButton();
-            this.three = new System.Windows.Forms.RadioButton();
+            this.zero = new System.Windows.Forms.RadioButton();
             this.four = new System.Windows.Forms.RadioButton();
+            this.three = new System.Windows.Forms.RadioButton();
+            this.two = new System.Windows.Forms.RadioButton();
+            this.one = new System.Windows.Forms.RadioButton();
             this.AfternoonDoseLabel = new System.Windows.Forms.Label();
             this.AfternoonGroupBox = new System.Windows.Forms.GroupBox();
+            this.a_zero = new System.Windows.Forms.RadioButton();
             this.a_four = new System.Windows.Forms.RadioButton();
             this.a_three = new System.Windows.Forms.RadioButton();
             this.a_two = new System.Windows.Forms.RadioButton();
             this.a_one = new System.Windows.Forms.RadioButton();
             this.NightDoseLabel = new System.Windows.Forms.Label();
             this.NightDoseGroupBox = new System.Windows.Forms.GroupBox();
+            this.n_zero = new System.Windows.Forms.RadioButton();
             this.n_four = new System.Windows.Forms.RadioButton();
             this.n_three = new System.Windows.Forms.RadioButton();
             this.n_two = new System.Windows.Forms.RadioButton();
             this.n_one = new System.Windows.Forms.RadioButton();
             this.PrescriptionSaveButton = new System.Windows.Forms.Button();
-            this.zero = new System.Windows.Forms.RadioButton();
-            this.a_zero = new System.Windows.Forms.RadioButton();
-            this.n_zero = new System.Windows.Forms.RadioButton();
             this.DaysLabel = new System.Windows.Forms.Label();
             this.DaysTextBox = new System.Windows.Forms.TextBox();
             this.HintLabel = new System.Windows.Forms.Label();
@@ -128,7 +126,8 @@
             // MedicineNameTextBox
             // 
             this.MedicineNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.MedicineNameTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.AllUrl;
+            this.MedicineNameTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.MedicineNameTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.MedicineNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MedicineNameTextBox.Location = new System.Drawing.Point(620, 116);
             this.MedicineNameTextBox.Name = "MedicineNameTextBox";
@@ -146,22 +145,6 @@
             this.ToPatientLabel.Size = new System.Drawing.Size(120, 23);
             this.ToPatientLabel.TabIndex = 12;
             this.ToPatientLabel.Text = "To Patient *";
-            // 
-            // entityCommand1
-            // 
-            this.entityCommand1.CommandTimeout = 0;
-            this.entityCommand1.CommandTree = null;
-            this.entityCommand1.Connection = null;
-            this.entityCommand1.EnablePlanCaching = true;
-            this.entityCommand1.Transaction = null;
-            // 
-            // entityCommand2
-            // 
-            this.entityCommand2.CommandTimeout = 0;
-            this.entityCommand2.CommandTree = null;
-            this.entityCommand2.Connection = null;
-            this.entityCommand2.EnablePlanCaching = true;
-            this.entityCommand2.Transaction = null;
             // 
             // ToPatientTextBox
             // 
@@ -199,27 +182,27 @@
             this.MorningDoseGroupBox.TabIndex = 15;
             this.MorningDoseGroupBox.TabStop = false;
             // 
-            // one
+            // zero
             // 
-            this.one.AutoSize = true;
-            this.one.Location = new System.Drawing.Point(59, 10);
-            this.one.Name = "one";
-            this.one.Size = new System.Drawing.Size(37, 21);
-            this.one.TabIndex = 0;
-            this.one.TabStop = true;
-            this.one.Text = "1";
-            this.one.UseVisualStyleBackColor = true;
+            this.zero.AutoSize = true;
+            this.zero.Location = new System.Drawing.Point(7, 11);
+            this.zero.Name = "zero";
+            this.zero.Size = new System.Drawing.Size(37, 21);
+            this.zero.TabIndex = 4;
+            this.zero.TabStop = true;
+            this.zero.Text = "0";
+            this.zero.UseVisualStyleBackColor = true;
             // 
-            // two
+            // four
             // 
-            this.two.AutoSize = true;
-            this.two.Location = new System.Drawing.Point(116, 10);
-            this.two.Name = "two";
-            this.two.Size = new System.Drawing.Size(37, 21);
-            this.two.TabIndex = 1;
-            this.two.TabStop = true;
-            this.two.Text = "2";
-            this.two.UseVisualStyleBackColor = true;
+            this.four.AutoSize = true;
+            this.four.Location = new System.Drawing.Point(231, 10);
+            this.four.Name = "four";
+            this.four.Size = new System.Drawing.Size(37, 21);
+            this.four.TabIndex = 3;
+            this.four.TabStop = true;
+            this.four.Text = "4";
+            this.four.UseVisualStyleBackColor = true;
             // 
             // three
             // 
@@ -232,16 +215,27 @@
             this.three.Text = "3";
             this.three.UseVisualStyleBackColor = true;
             // 
-            // four
+            // two
             // 
-            this.four.AutoSize = true;
-            this.four.Location = new System.Drawing.Point(231, 10);
-            this.four.Name = "four";
-            this.four.Size = new System.Drawing.Size(37, 21);
-            this.four.TabIndex = 3;
-            this.four.TabStop = true;
-            this.four.Text = "4";
-            this.four.UseVisualStyleBackColor = true;
+            this.two.AutoSize = true;
+            this.two.Location = new System.Drawing.Point(116, 10);
+            this.two.Name = "two";
+            this.two.Size = new System.Drawing.Size(37, 21);
+            this.two.TabIndex = 1;
+            this.two.TabStop = true;
+            this.two.Text = "2";
+            this.two.UseVisualStyleBackColor = true;
+            // 
+            // one
+            // 
+            this.one.AutoSize = true;
+            this.one.Location = new System.Drawing.Point(59, 10);
+            this.one.Name = "one";
+            this.one.Size = new System.Drawing.Size(37, 21);
+            this.one.TabIndex = 0;
+            this.one.TabStop = true;
+            this.one.Text = "1";
+            this.one.UseVisualStyleBackColor = true;
             // 
             // AfternoonDoseLabel
             // 
@@ -267,6 +261,17 @@
             this.AfternoonGroupBox.Size = new System.Drawing.Size(274, 42);
             this.AfternoonGroupBox.TabIndex = 16;
             this.AfternoonGroupBox.TabStop = false;
+            // 
+            // a_zero
+            // 
+            this.a_zero.AutoSize = true;
+            this.a_zero.Location = new System.Drawing.Point(7, 10);
+            this.a_zero.Name = "a_zero";
+            this.a_zero.Size = new System.Drawing.Size(37, 21);
+            this.a_zero.TabIndex = 5;
+            this.a_zero.TabStop = true;
+            this.a_zero.Text = "0";
+            this.a_zero.UseVisualStyleBackColor = true;
             // 
             // a_four
             // 
@@ -337,6 +342,17 @@
             this.NightDoseGroupBox.TabIndex = 17;
             this.NightDoseGroupBox.TabStop = false;
             // 
+            // n_zero
+            // 
+            this.n_zero.AutoSize = true;
+            this.n_zero.Location = new System.Drawing.Point(7, 15);
+            this.n_zero.Name = "n_zero";
+            this.n_zero.Size = new System.Drawing.Size(37, 21);
+            this.n_zero.TabIndex = 6;
+            this.n_zero.TabStop = true;
+            this.n_zero.Text = "0";
+            this.n_zero.UseVisualStyleBackColor = true;
+            // 
             // n_four
             // 
             this.n_four.AutoSize = true;
@@ -391,39 +407,6 @@
             this.PrescriptionSaveButton.Text = "Save";
             this.PrescriptionSaveButton.UseVisualStyleBackColor = true;
             this.PrescriptionSaveButton.Click += new System.EventHandler(this.PrescriptionSaveButton_Click);
-            // 
-            // zero
-            // 
-            this.zero.AutoSize = true;
-            this.zero.Location = new System.Drawing.Point(7, 11);
-            this.zero.Name = "zero";
-            this.zero.Size = new System.Drawing.Size(37, 21);
-            this.zero.TabIndex = 4;
-            this.zero.TabStop = true;
-            this.zero.Text = "0";
-            this.zero.UseVisualStyleBackColor = true;
-            // 
-            // a_zero
-            // 
-            this.a_zero.AutoSize = true;
-            this.a_zero.Location = new System.Drawing.Point(7, 10);
-            this.a_zero.Name = "a_zero";
-            this.a_zero.Size = new System.Drawing.Size(37, 21);
-            this.a_zero.TabIndex = 5;
-            this.a_zero.TabStop = true;
-            this.a_zero.Text = "0";
-            this.a_zero.UseVisualStyleBackColor = true;
-            // 
-            // n_zero
-            // 
-            this.n_zero.AutoSize = true;
-            this.n_zero.Location = new System.Drawing.Point(7, 15);
-            this.n_zero.Name = "n_zero";
-            this.n_zero.Size = new System.Drawing.Size(37, 21);
-            this.n_zero.TabIndex = 6;
-            this.n_zero.TabStop = true;
-            this.n_zero.Text = "0";
-            this.n_zero.UseVisualStyleBackColor = true;
             // 
             // DaysLabel
             // 
@@ -506,8 +489,6 @@
         private System.Windows.Forms.Label MedicineLabel;
         private System.Windows.Forms.TextBox MedicineNameTextBox;
         private System.Windows.Forms.Label ToPatientLabel;
-        private System.Data.Entity.Core.EntityClient.EntityCommand entityCommand1;
-        private System.Data.Entity.Core.EntityClient.EntityCommand entityCommand2;
         private System.Windows.Forms.TextBox ToPatientTextBox;
         private System.Windows.Forms.Label MorningDoseLabel;
         private System.Windows.Forms.GroupBox MorningDoseGroupBox;

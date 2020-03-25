@@ -25,5 +25,6 @@ namespace HealthcardWinForms.Models
         public string DoctorHospital { get; set; }
         [Required]
         public string DoctorName { get; set; }
+        public string Date { get; set; }
     }
 }

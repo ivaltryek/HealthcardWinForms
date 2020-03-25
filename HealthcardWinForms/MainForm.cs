@@ -44,7 +44,7 @@ namespace HealthcardWinForms
 
                 if(user == null)
                 {
-                    MessageBox.Show("User with email "+ emailTextBox.Text.ToString() + "not found");
+                    MessageBox.Show("User with email "+ emailTextBox.Text.ToString() + " not found");
                 }
                 else
                 {
@@ -107,6 +107,7 @@ namespace HealthcardWinForms
                     {
                         MessageBox.Show("Couldn't Sign in to the app, make sure credentials are valid", "Failed to Authenticate", 
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        passwordTextBox.Focus();
                     }
                 }
             } 

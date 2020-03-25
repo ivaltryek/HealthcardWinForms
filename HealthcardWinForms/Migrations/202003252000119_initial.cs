@@ -28,6 +28,45 @@ namespace HealthcardWinForms.Migrations
                 .PrimaryKey(t => t.ID);
             
             CreateTable(
+                "dbo.Medicines",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        MedicineName = c.String(nullable: false),
+                        MorningDose = c.Int(nullable: false),
+                        AfterNoonDose = c.Int(nullable: false),
+                        NightDose = c.Int(nullable: false),
+                        Days = c.Int(nullable: false),
+                        UniqueMedicineID = c.String(),
+                    })
+                .PrimaryKey(t => t.ID);
+            
+            CreateTable(
+                "dbo.MedNames",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        MedicineName = c.String(),
+                        AddedBy = c.String(),
+                    })
+                .PrimaryKey(t => t.ID);
+            
+            CreateTable(
+                "dbo.Prescriptions",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        DoctorEmail = c.String(nullable: false),
+                        PatientID = c.String(nullable: false),
+                        MedicineID = c.String(nullable: false),
+                        PatientName = c.String(nullable: false),
+                        DoctorHospital = c.String(nullable: false),
+                        DoctorName = c.String(nullable: false),
+                        Date = c.String(),
+                    })
+                .PrimaryKey(t => t.ID);
+            
+            CreateTable(
                 "dbo.Users",
                 c => new
                     {
@@ -40,6 +79,7 @@ namespace HealthcardWinForms.Migrations
                         Gender = c.String(nullable: false),
                         Password = c.String(nullable: false, maxLength: 2048),
                         Age = c.String(nullable: false),
+                        UniqueID = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
                 .Index(t => t.Email, unique: true);
@@ -50,6 +90,9 @@ namespace HealthcardWinForms.Migrations
         {
             DropIndex("dbo.Users", new[] { "Email" });
             DropTable("dbo.Users");
+            DropTable("dbo.Prescriptions");
+            DropTable("dbo.MedNames");
+            DropTable("dbo.Medicines");
             DropTable("dbo.DocDetails");
         }
     }

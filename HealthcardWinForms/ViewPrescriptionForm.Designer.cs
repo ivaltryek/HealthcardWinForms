@@ -37,6 +37,7 @@
             this.PatientID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.PatientName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.MedicineID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -79,12 +80,13 @@
             this.ID,
             this.PatientID,
             this.PatientName,
-            this.MedicineID});
+            this.MedicineID,
+            this.Date});
             this.PrescriptionListView.FullRowSelect = true;
             this.PrescriptionListView.HideSelection = false;
-            this.PrescriptionListView.Location = new System.Drawing.Point(405, 63);
+            this.PrescriptionListView.Location = new System.Drawing.Point(451, 121);
             this.PrescriptionListView.Name = "PrescriptionListView";
-            this.PrescriptionListView.Size = new System.Drawing.Size(950, 617);
+            this.PrescriptionListView.Size = new System.Drawing.Size(958, 586);
             this.PrescriptionListView.TabIndex = 4;
             this.PrescriptionListView.UseCompatibleStateImageBehavior = false;
             this.PrescriptionListView.View = System.Windows.Forms.View.Details;
@@ -109,6 +111,11 @@
             // 
             this.MedicineID.Text = "MedicineID";
             this.MedicineID.Width = 318;
+            // 
+            // Date
+            // 
+            this.Date.Text = "Date";
+            this.Date.Width = 194;
             // 
             // ViewPrescriptionForm
             // 
@@ -137,5 +144,6 @@
         private System.Windows.Forms.ColumnHeader PatientID;
         private System.Windows.Forms.ColumnHeader PatientName;
         private System.Windows.Forms.ColumnHeader MedicineID;
+        private System.Windows.Forms.ColumnHeader Date;
     }
 }

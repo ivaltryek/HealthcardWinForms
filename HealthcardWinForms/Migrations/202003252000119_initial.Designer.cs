@@ -7,13 +7,13 @@ namespace HealthcardWinForms.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class phase_2__1 : IMigrationMetadata
+    public sealed partial class initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(phase_2__1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "202003231815095_phase_2__1"; }
+            get { return "202003252000119_initial"; }
         }
         
         string IMigrationMetadata.Source

@@ -70,32 +70,13 @@
     <Compile Include="HomeForm.Designer.cs">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202003221659596_initial.cs" />
-    <Compile Include="Migrations\202003221659596_initial.Designer.cs">
-      <DependentUpon>202003221659596_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003231811029_phase_2.cs" />
-    <Compile Include="Migrations\202003231811029_phase_2.Designer.cs">
-      <DependentUpon>202003231811029_phase_2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003231815095_phase_2__1.cs" />
-    <Compile Include="Migrations\202003231815095_phase_2__1.Designer.cs">
-      <DependentUpon>202003231815095_phase_2__1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003240920177_phase_2__2.cs" />
-    <Compile Include="Migrations\202003240920177_phase_2__2.Designer.cs">
-      <DependentUpon>202003240920177_phase_2__2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003241932502_phase_2__3.cs" />
-    <Compile Include="Migrations\202003241932502_phase_2__3.Designer.cs">
-      <DependentUpon>202003241932502_phase_2__3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003250823476_phase_2__4.cs" />
-    <Compile Include="Migrations\202003250823476_phase_2__4.Designer.cs">
-      <DependentUpon>202003250823476_phase_2__4.cs</DependentUpon>
+    <Compile Include="Migrations\202003252000119_initial.cs" />
+    <Compile Include="Migrations\202003252000119_initial.Designer.cs">
+      <DependentUpon>202003252000119_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\DocDetails.cs" />
     <Compile Include="Models\Medicine.cs" />
+    <Compile Include="Models\MedName.cs" />
     <Compile Include="Models\Prescription.cs" />
     <Compile Include="PatientHomeForm.cs">
       <SubType>Form</SubType>
@@ -137,23 +118,8 @@
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003221659596_initial.resx">
-      <DependentUpon>202003221659596_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003231811029_phase_2.resx">
-      <DependentUpon>202003231811029_phase_2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003231815095_phase_2__1.resx">
-      <DependentUpon>202003231815095_phase_2__1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003240920177_phase_2__2.resx">
-      <DependentUpon>202003240920177_phase_2__2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003241932502_phase_2__3.resx">
-      <DependentUpon>202003241932502_phase_2__3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003250823476_phase_2__4.resx">
-      <DependentUpon>202003250823476_phase_2__4.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003252000119_initial.resx">
+      <DependentUpon>202003252000119_initial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PatientHomeForm.resx">
       <DependentUpon>PatientHomeForm.cs</DependentUpon>

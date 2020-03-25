@@ -32,7 +32,8 @@ namespace HealthcardWinForms.Models
         public string Password { get; set; }
         [Required]
         public string Age { get; set; }
-
+        [Required]
+        public string UniqueID { get; set; }
 
     }
 }

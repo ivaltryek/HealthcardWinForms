@@ -117,19 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAURJREFUSEu9
-        080qBlEcx/EpYY278FKscQW2srRwGbKQsiQisuAC3IKXe/C+Z4fkbaOI77eenkb95zln5olffWo68/+f
-        mTlzTpGRMWziEu8tXm9gFI3Tjx184bvCJ7bRh1px8lNEk0ZOUOshu4gm6mQLWXHNOy1LFZdrBMn4Q6MJ
-        cqwjmStEzTkukMwbouYcr0jGoqg5xwuS+fMl8oRa/IjDTNbak/WTPf5uObfqlAOJTMNae4YdyInH3ze6
-        x6QDFfHeA6x1e2fHY38MGz+wDycbxBD8sgN4z5oj9KJWfIjH3093koj3fPPak5fj8ffnuUM8I/J6Ddlr
-        /u/pwQxWMe5ARSZgjbX2ZGUOdyiv9Rn2sNzi9TnKNbeYRcesoNzUhC8QZgFRQxPz+BX39jOi4iaeMIB2
-        lhAVdmMR7VwjKurGTVEUxQ/Icx6TZEkX0QAAAABJRU5ErkJggg==
-</value>
+  <data name="Target" xml:space="preserve">
+    <value>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</value>
   </data>
-  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
+  </data>
 </root>

@@ -58,6 +58,8 @@ namespace HealthcardWinForms
                         UserInfo.UserEmail = user.Email.ToString();
                         UserInfo.UserName = user.Firstname.ToString();
                         UserInfo.UserType = user.UserType.ToString();
+                        UserInfo.UserID = user.UniqueID.ToString();
+                        UserInfo.UserLastName = user.Lastname.ToString();
 
                         emailTextBox.Clear();
                         passwordTextBox.Clear();
@@ -71,22 +73,31 @@ namespace HealthcardWinForms
                             registerButton.Enabled = false;
                         }
 
-                        DocDetails docDetails = databaseContext.DocDetails.Where(a => a.Doctor == UserInfo.UserEmail).FirstOrDefault<DocDetails>();
-                        if (docDetails == null)
+                        if (UserInfo.UserID.StartsWith("D"))
                         {
-                            DocExtraDetails docExtraDetails = new DocExtraDetails();
-                            docExtraDetails.Tag = this;
-                            docExtraDetails.ShowDialog(this);
-                            //this.Enabled = false;
-                            
+                            DocDetails docDetails = databaseContext.DocDetails.Where(a => a.Doctor == UserInfo.UserEmail).FirstOrDefault<DocDetails>();
+                            if (docDetails == null)
+                            {
+                                DocExtraDetails docExtraDetails = new DocExtraDetails();
+                                docExtraDetails.Tag = this;
+                                docExtraDetails.ShowDialog(this);
+                                //this.Enabled = false;
+
+                            }
+                            else
+                            {
+                                HomeForm homeForm = new HomeForm();
+                                homeForm.Tag = this;
+                                homeForm.ShowDialog(this);
+                                //this.Enabled = false;
+
+                            }
                         }
                         else
                         {
-                            HomeForm homeForm = new HomeForm();
-                            homeForm.Tag = this;
-                            homeForm.ShowDialog(this);
-                            //this.Enabled = false;
-
+                            PatientHomeForm patientHomeForm = new PatientHomeForm();
+                            patientHomeForm.Tag = this;
+                            patientHomeForm.ShowDialog(this);
                         }
 
                         //Redirecting to Home Form if user gets logged in.
@@ -111,7 +122,7 @@ namespace HealthcardWinForms
             RegisterForm registerForm = new RegisterForm();
             registerForm.Tag = this;
             registerForm.ShowDialog(this);
-            Hide();
+            
             
         }
 

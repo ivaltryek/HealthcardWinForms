@@ -74,7 +74,41 @@
     <Compile Include="Migrations\202003221659596_initial.Designer.cs">
       <DependentUpon>202003221659596_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003231811029_phase_2.cs" />
+    <Compile Include="Migrations\202003231811029_phase_2.Designer.cs">
+      <DependentUpon>202003231811029_phase_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003231815095_phase_2__1.cs" />
+    <Compile Include="Migrations\202003231815095_phase_2__1.Designer.cs">
+      <DependentUpon>202003231815095_phase_2__1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003240920177_phase_2__2.cs" />
+    <Compile Include="Migrations\202003240920177_phase_2__2.Designer.cs">
+      <DependentUpon>202003240920177_phase_2__2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003241932502_phase_2__3.cs" />
+    <Compile Include="Migrations\202003241932502_phase_2__3.Designer.cs">
+      <DependentUpon>202003241932502_phase_2__3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003250823476_phase_2__4.cs" />
+    <Compile Include="Migrations\202003250823476_phase_2__4.Designer.cs">
+      <DependentUpon>202003250823476_phase_2__4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\DocDetails.cs" />
+    <Compile Include="Models\Medicine.cs" />
+    <Compile Include="Models\Prescription.cs" />
+    <Compile Include="PatientHomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientHomeForm.Designer.cs">
+      <DependentUpon>PatientHomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrescriptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrescriptionForm.Designer.cs">
+      <DependentUpon>PrescriptionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +125,12 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewPrescriptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewPrescriptionForm.Designer.cs">
+      <DependentUpon>ViewPrescriptionForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DocExtraDetails.resx">
       <DependentUpon>DocExtraDetails.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +139,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003221659596_initial.resx">
       <DependentUpon>202003221659596_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003231811029_phase_2.resx">
+      <DependentUpon>202003231811029_phase_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003231815095_phase_2__1.resx">
+      <DependentUpon>202003231815095_phase_2__1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003240920177_phase_2__2.resx">
+      <DependentUpon>202003240920177_phase_2__2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003241932502_phase_2__3.resx">
+      <DependentUpon>202003241932502_phase_2__3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003250823476_phase_2__4.resx">
+      <DependentUpon>202003250823476_phase_2__4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientHomeForm.resx">
+      <DependentUpon>PatientHomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrescriptionForm.resx">
+      <DependentUpon>PrescriptionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
@@ -115,6 +176,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ViewPrescriptionForm.resx">
+      <DependentUpon>ViewPrescriptionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

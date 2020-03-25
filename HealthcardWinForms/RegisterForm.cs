@@ -64,6 +64,18 @@ namespace HealthcardWinForms
                    
                     try
                     {
+                        string fn = firstNameTextBox.Text.ToString().Substring(0,2).ToUpper();
+                        string ln = lastNameTextBox.Text.ToString().Substring(0,2).ToUpper();
+                        string type = userTypeComboBox.SelectedItem.ToString().Substring(0,1).ToUpper();
+                        string gender = genderGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Name.Substring(0,1).ToUpper();
+                        string mobile = mobileTextBox.Text.ToString().Substring(0,4);
+                        string email_add = email.Text.ToString().Split('@')[0].ToUpper();
+                        string age_ = ageTextBox.Text.ToString();
+                       
+                        Random rnd = new Random();
+                        long RandomNumber = rnd.Next(3000, 19999);
+                        string uniqueID = type + gender + email_add + mobile + RandomNumber +  age_;
+                        //MessageBox.Show(uniqueID);
                         var newUser = new User()
                         {
                             Firstname = firstNameTextBox.Text.ToString(),
@@ -74,6 +86,7 @@ namespace HealthcardWinForms
                             Email = email.Text.ToString(),
                             Password = converted,
                             Age = ageTextBox.Text.ToString(),
+                            UniqueID = uniqueID
                         };
                         databaseContext.Users.Add(newUser);
                         databaseContext.SaveChanges();

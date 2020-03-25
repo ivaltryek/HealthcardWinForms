@@ -117,19 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAURJREFUSEu9
-        080qBlEcx/EpYY278FKscQW2srRwGbKQsiQisuAC3IKXe/C+Z4fkbaOI77eenkb95zln5olffWo68/+f
-        mTlzTpGRMWziEu8tXm9gFI3Tjx184bvCJ7bRh1px8lNEk0ZOUOshu4gm6mQLWXHNOy1LFZdrBMn4Q6MJ
-        cqwjmStEzTkukMwbouYcr0jGoqg5xwuS+fMl8oRa/IjDTNbak/WTPf5uObfqlAOJTMNae4YdyInH3ze6
-        x6QDFfHeA6x1e2fHY38MGz+wDycbxBD8sgN4z5oj9KJWfIjH3093koj3fPPak5fj8ffnuUM8I/J6Ddlr
-        /u/pwQxWMe5ARSZgjbX2ZGUOdyiv9Rn2sNzi9TnKNbeYRcesoNzUhC8QZgFRQxPz+BX39jOi4iaeMIB2
-        lhAVdmMR7VwjKurGTVEUxQ/Icx6TZEkX0QAAAABJRU5ErkJggg==
-</value>
+  <data name="Target" xml:space="preserve">
+    <value>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</value>
   </data>
-  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
+  </data>
 </root>

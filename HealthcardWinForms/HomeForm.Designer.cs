@@ -34,6 +34,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.prescriptionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.myWrittenPrescriptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -73,7 +74,8 @@
             // prescriptionToolStripMenuItem
             // 
             this.prescriptionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addToolStripMenuItem});
+            this.addToolStripMenuItem,
+            this.myWrittenPrescriptionsToolStripMenuItem});
             this.prescriptionToolStripMenuItem.Name = "prescriptionToolStripMenuItem";
             this.prescriptionToolStripMenuItem.Size = new System.Drawing.Size(101, 24);
             this.prescriptionToolStripMenuItem.Text = "Prescription";
@@ -84,6 +86,13 @@
             this.addToolStripMenuItem.Size = new System.Drawing.Size(120, 26);
             this.addToolStripMenuItem.Text = "Add";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
+            // 
+            // myWrittenPrescriptionsToolStripMenuItem
+            // 
+            this.myWrittenPrescriptionsToolStripMenuItem.Name = "myWrittenPrescriptionsToolStripMenuItem";
+            this.myWrittenPrescriptionsToolStripMenuItem.Size = new System.Drawing.Size(253, 26);
+            this.myWrittenPrescriptionsToolStripMenuItem.Text = "My Written Prescriptions";
+            this.myWrittenPrescriptionsToolStripMenuItem.Click += new System.EventHandler(this.myWrittenPrescriptionsToolStripMenuItem_Click);
             // 
             // HomeForm
             // 
@@ -115,5 +124,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem prescriptionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem myWrittenPrescriptionsToolStripMenuItem;
     }
 }

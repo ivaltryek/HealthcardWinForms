@@ -64,5 +64,12 @@ namespace HealthcardWinForms
                 prescriptionForm.ShowDialog(this);
             }
         }
+
+        private void myWrittenPrescriptionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ViewPrescriptionForm viewPrescriptionForm = new ViewPrescriptionForm();
+            viewPrescriptionForm.Tag = this;
+            viewPrescriptionForm.ShowDialog(this);
+        }
     }
 }

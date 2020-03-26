@@ -19,6 +19,33 @@ namespace HealthcardWinForms
             this.Location = new Point(150, 150);
         }
 
+        public  void ViewPrescriptionOfPatient()
+        {
+            using(DatabaseContext databaseContext = new DatabaseContext())
+            {
+                try
+                {
+                    var list = databaseContext.Prescriptions.Where(p => p.PatientID == UserInfo.UserID).ToList();
+                    foreach (var pItem in list)
+                    {
+                        ListViewItem listViewItem = new ListViewItem(pItem.ID.ToString());
+                        listViewItem.SubItems.Add(pItem.PatientID.ToString());
+                        listViewItem.SubItems.Add(pItem.PatientName.ToString());
+                        listViewItem.SubItems.Add(pItem.MedicineID.ToString());
+                        listViewItem.SubItems.Add(pItem.Date.ToString());
+                        PrescriptionListView.Items.Add(listViewItem);
+                    }
+                    
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Exception Occurred at ViewPrescritionForPatient() " + ex.ToString());
+                }
+                
+
+            }
+        }
+
         private void ViewPrescriptionForm_Load(object sender, EventArgs e)
         {
             using(DatabaseContext databaseContext = new DatabaseContext())

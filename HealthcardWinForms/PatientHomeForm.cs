@@ -21,5 +21,13 @@ namespace HealthcardWinForms
             UsernameLabel.Text = UserInfo.UserName;
 
         }
+
+        private void MyPrescriptionMenuItem_Click(object sender, EventArgs e)
+        {
+            ViewPrescriptionForm viewPrescriptionForm = new ViewPrescriptionForm();
+            viewPrescriptionForm.ViewPrescriptionOfPatient();
+            viewPrescriptionForm.Tag = this;
+            viewPrescriptionForm.ShowDialog(this);
+        }
     }
 }

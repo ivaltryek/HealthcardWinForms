@@ -71,7 +71,7 @@ namespace HealthcardWinForms
             homeform.ShowDialog();
         }
 
-        private void ZipCodeTextBox_Leave(object sender, EventArgs e)
+        public void ZipCodeTextBox_Leave(object sender, EventArgs e)
         {
             if(long.TryParse(ZipCodeTextBox.Text.ToString(), out long zip))
             {

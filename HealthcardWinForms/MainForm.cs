@@ -73,6 +73,32 @@ namespace HealthcardWinForms
                             registerButton.Enabled = false;
                         }
 
+                        if(UserInfo.UserID.StartsWith("P"))
+                        {
+                            PatientHomeForm patientHomeForm = new PatientHomeForm();
+                            patientHomeForm.Tag = this;
+                            patientHomeForm.ShowDialog(this);
+                        }
+
+                        if(UserInfo.UserID.StartsWith("L"))
+                        {
+                            LaboratorianDetail laboratorianDetail = databaseContext.LaboratorianDetails.Where(l => l.Laboratorian == UserInfo.UserEmail).FirstOrDefault<LaboratorianDetail>();
+                            if(laboratorianDetail == null)
+                            {
+                                LaboratorianExtraDetailsForm laboratorianExtraDetailsForm = new LaboratorianExtraDetailsForm();
+                                laboratorianExtraDetailsForm.Tag = this;
+                                laboratorianExtraDetailsForm.ShowDialog(this);
+                            }
+                            else
+                            {
+                                UserInfo.IsInfoFilled = true;
+                                UserInfo.LaboratorianLabName = laboratorianDetail.WorkPlace.ToString();
+                                LaboratorianHomeForm laboratorianHomeForm = new LaboratorianHomeForm();
+                                laboratorianHomeForm.Tag = this;
+                                laboratorianHomeForm.ShowDialog(this);
+                            }
+                        }
+
                         if (UserInfo.UserID.StartsWith("D"))
                         {
                             DocDetails docDetails = databaseContext.DocDetails.Where(a => a.Doctor == UserInfo.UserEmail).FirstOrDefault<DocDetails>();
@@ -86,6 +112,7 @@ namespace HealthcardWinForms
                             }
                             else
                             {
+                                UserInfo.IsInfoFilled = true;
                                 HomeForm homeForm = new HomeForm();
                                 homeForm.Tag = this;
                                 homeForm.ShowDialog(this);
@@ -93,12 +120,7 @@ namespace HealthcardWinForms
 
                             }
                         }
-                        else
-                        {
-                            PatientHomeForm patientHomeForm = new PatientHomeForm();
-                            patientHomeForm.Tag = this;
-                            patientHomeForm.ShowDialog(this);
-                        }
+                       
 
                         //Redirecting to Home Form if user gets logged in.
 

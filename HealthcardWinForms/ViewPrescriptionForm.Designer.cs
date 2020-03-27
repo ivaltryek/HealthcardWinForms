@@ -76,6 +76,7 @@
             // 
             // PrescriptionListView
             // 
+            this.PrescriptionListView.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.PrescriptionListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ID,
             this.PatientID,
@@ -110,7 +111,7 @@
             // MedicineID
             // 
             this.MedicineID.Text = "MedicineID";
-            this.MedicineID.Width = 318;
+            this.MedicineID.Width = 260;
             // 
             // Date
             // 

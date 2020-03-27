@@ -26,6 +26,10 @@ namespace HealthcardWinForms
                 try
                 {
                     var list = databaseContext.Prescriptions.Where(p => p.PatientID == UserInfo.UserID).ToList();
+                    if(!list.Any())
+                    {
+                        MessageBox.Show("No Prescriptions Found", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                     foreach (var pItem in list)
                     {
                         ListViewItem listViewItem = new ListViewItem(pItem.ID.ToString());
@@ -46,13 +50,17 @@ namespace HealthcardWinForms
             }
         }
 
-        private void ViewPrescriptionForm_Load(object sender, EventArgs e)
+        public void ViewPrescriptionOfDoctor()
         {
-            using(DatabaseContext databaseContext = new DatabaseContext())
+            using (DatabaseContext databaseContext = new DatabaseContext())
             {
                 try
                 {
                     var prescriptionList = databaseContext.Prescriptions.Where(p => p.DoctorEmail == UserInfo.UserEmail).ToList();
+                    if (!prescriptionList.Any())
+                    {
+                        MessageBox.Show("No Prescriptions Found", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                     foreach (var pItem in prescriptionList)
                     {
                         ListViewItem listViewItem = new ListViewItem(pItem.ID.ToString());
@@ -63,13 +71,18 @@ namespace HealthcardWinForms
                         PrescriptionListView.Items.Add(listViewItem);
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show("Something went wrong Error: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                
+
 
             }
+        }
+
+        private void ViewPrescriptionForm_Load(object sender, EventArgs e)
+        {
+           
         }
 
         private void PrescriptionListView_SelectedIndexChanged(object sender, EventArgs e)

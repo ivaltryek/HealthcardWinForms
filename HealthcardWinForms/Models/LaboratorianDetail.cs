@@ -8,15 +8,13 @@ using System.Threading.Tasks;
 
 namespace HealthcardWinForms.Models
 {
-    public class DocDetails
+    public class LaboratorianDetail
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
         [Required]
-        public string Doctor { get; set; }
-        [MaxLength(1024)]
-        public string Specialities { get; set; }
+        public string Laboratorian { get; set; }
         [Required]
         public string LicenceNo { get; set; }
         [Required]

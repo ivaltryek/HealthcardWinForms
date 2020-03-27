@@ -1,6 +1,6 @@
 ﻿namespace HealthcardWinForms
 {
-    partial class PatientHomeForm
+    partial class LaboratorianHomeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,26 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PatientHomeForm));
-            this.UsernameLabel = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LaboratorianHomeForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.prescriptionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MyPrescriptionMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MyUploadedReports = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.UsernameLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // UsernameLabel
-            // 
-            this.UsernameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.UsernameLabel.AutoSize = true;
-            this.UsernameLabel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsernameLabel.Location = new System.Drawing.Point(1411, 4);
-            this.UsernameLabel.Name = "UsernameLabel";
-            this.UsernameLabel.Size = new System.Drawing.Size(60, 21);
-            this.UsernameLabel.TabIndex = 2;
-            this.UsernameLabel.Text = "label1";
             // 
             // menuStrip1
             // 
@@ -56,45 +46,65 @@
             this.prescriptionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1504, 30);
-            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Size = new System.Drawing.Size(1504, 28);
+            this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // prescriptionToolStripMenuItem
             // 
             this.prescriptionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MyPrescriptionMenuItem});
+            this.addToolStripMenuItem,
+            this.MyUploadedReports});
             this.prescriptionToolStripMenuItem.Name = "prescriptionToolStripMenuItem";
-            this.prescriptionToolStripMenuItem.Size = new System.Drawing.Size(101, 26);
-            this.prescriptionToolStripMenuItem.Text = "Prescription";
+            this.prescriptionToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
+            this.prescriptionToolStripMenuItem.Text = "Reports";
             // 
-            // MyPrescriptionMenuItem
+            // addToolStripMenuItem
             // 
-            this.MyPrescriptionMenuItem.Name = "MyPrescriptionMenuItem";
-            this.MyPrescriptionMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.MyPrescriptionMenuItem.Text = "My Prescriptions";
-            this.MyPrescriptionMenuItem.Click += new System.EventHandler(this.MyPrescriptionMenuItem_Click);
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
+            this.addToolStripMenuItem.Text = "Add";
+            this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
+            // 
+            // MyUploadedReports
+            // 
+            this.MyUploadedReports.Name = "MyUploadedReports";
+            this.MyUploadedReports.Size = new System.Drawing.Size(237, 26);
+            this.MyUploadedReports.Text = "My Uploaded Reports";
+            this.MyUploadedReports.Click += new System.EventHandler(this.MyUploadedReports_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1371, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(1367, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.Size = new System.Drawing.Size(32, 24);
+            this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // PatientHomeForm
+            // UsernameLabel
+            // 
+            this.UsernameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.UsernameLabel.AutoSize = true;
+            this.UsernameLabel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsernameLabel.Location = new System.Drawing.Point(1418, 4);
+            this.UsernameLabel.Name = "UsernameLabel";
+            this.UsernameLabel.Size = new System.Drawing.Size(60, 21);
+            this.UsernameLabel.TabIndex = 5;
+            this.UsernameLabel.Text = "label1";
+            // 
+            // LaboratorianHomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1504, 747);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.UsernameLabel);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
-            this.Name = "PatientHomeForm";
-            this.Text = "PatientHomeForm";
+            this.Name = "LaboratorianHomeForm";
+            this.Text = "LaboratorianHomeForm";
+            this.Load += new System.EventHandler(this.LaboratorianHomeForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -104,10 +114,12 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label UsernameLabel;
+
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem prescriptionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem MyPrescriptionMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MyUploadedReports;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label UsernameLabel;
     }
 }

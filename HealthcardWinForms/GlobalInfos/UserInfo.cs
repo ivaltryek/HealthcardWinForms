@@ -17,5 +17,6 @@ namespace HealthcardWinForms.GlobalInfos
         public static string medicineIDHelper;
         public static string TempPatientIDForDoctor;
         public static string DoctorHospitalName;
+        public static string LaboratorianLabName;
     }
 }

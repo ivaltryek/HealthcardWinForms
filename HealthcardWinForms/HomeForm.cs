@@ -69,6 +69,7 @@ namespace HealthcardWinForms
         {
             ViewPrescriptionForm viewPrescriptionForm = new ViewPrescriptionForm();
             viewPrescriptionForm.Tag = this;
+            viewPrescriptionForm.ViewPrescriptionOfDoctor();
             viewPrescriptionForm.ShowDialog(this);
         }
     }

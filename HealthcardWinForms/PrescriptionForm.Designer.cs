@@ -432,6 +432,7 @@
             // 
             // HintLabel
             // 
+            this.HintLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.HintLabel.AutoSize = true;
             this.HintLabel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HintLabel.Location = new System.Drawing.Point(390, 567);

@@ -44,6 +44,7 @@
             this.ReportDescriptionRichTextBox = new System.Windows.Forms.RichTextBox();
             this.SaveReportButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.HintLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -210,11 +211,24 @@
             this.label1.Size = new System.Drawing.Size(0, 17);
             this.label1.TabIndex = 23;
             // 
+            // HintLabel
+            // 
+            this.HintLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.HintLabel.AutoSize = true;
+            this.HintLabel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HintLabel.Location = new System.Drawing.Point(472, 598);
+            this.HintLabel.Name = "HintLabel";
+            this.HintLabel.Size = new System.Drawing.Size(780, 23);
+            this.HintLabel.TabIndex = 24;
+            this.HintLabel.Text = "Note: To add another medicine click on save, then you can add more to prescriptio" +
+    "n";
+            // 
             // AddLabReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1504, 747);
+            this.Controls.Add(this.HintLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SaveReportButton);
             this.Controls.Add(this.ReportDescriptionRichTextBox);
@@ -255,5 +269,6 @@
         private System.Windows.Forms.RichTextBox ReportDescriptionRichTextBox;
         private System.Windows.Forms.Button SaveReportButton;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label HintLabel;
     }
 }

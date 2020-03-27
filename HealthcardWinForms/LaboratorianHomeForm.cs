@@ -37,7 +37,7 @@ namespace HealthcardWinForms
         private void MyUploadedReports_Click(object sender, EventArgs e)
         {
             ViewReportForm viewReportForm = new ViewReportForm();
-            viewReportForm.ViewReportsOfLaboratorian();
+            viewReportForm.ViewReports(UserInfo.UserID, false);
             viewReportForm.Tag = this;
             viewReportForm.ShowDialog(this);
         }

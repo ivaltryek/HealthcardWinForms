@@ -29,5 +29,13 @@ namespace HealthcardWinForms
             viewPrescriptionForm.Tag = this;
             viewPrescriptionForm.ShowDialog(this);
         }
+
+        private void viewMyLabReportsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ViewReportForm viewReportForm = new ViewReportForm();
+            viewReportForm.ViewReports(UserInfo.UserID, true);
+            viewReportForm.Tag = this;
+            viewReportForm.ShowDialog(this);
+        }
     }
 }

@@ -27,16 +27,31 @@ namespace HealthcardWinForms
         {
 
         }
-        public void ViewReportsOfLaboratorian()
+        public void ViewReports(string userid, bool forPatient)
         {
-            using(DatabaseContext databaseContext = new DatabaseContext())
+            var reportlist = new List<Report> ();
+            using (DatabaseContext databaseContext = new DatabaseContext())
             {
                 try
                 {
-                    var reportlist = databaseContext.Reports.Where(r => r.LaboratorianID == UserInfo.UserID).ToList();
-                    if(!reportlist.Any())
+                   
+                    if (!forPatient)
                     {
-                        MessageBox.Show("It seems there's no report found which was uploaded by you!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                           reportlist = databaseContext.Reports.Where(r => r.LaboratorianID == userid).ToList();
+                        if (!reportlist.Any())
+                        {
+                            MessageBox.Show("It seems there's no report found which was uploaded by you or for you.!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
+                    }
+                    if(forPatient)
+                    {
+                        reportlist = databaseContext.Reports.Where(r => r.PatientID == userid).ToList();
+                        if (!reportlist.Any())
+                        {
+                            MessageBox.Show("It seems there's no report found which was uploaded by you or for you.!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
                     }
                     foreach(var rItem in reportlist)
                     {
@@ -75,7 +90,9 @@ namespace HealthcardWinForms
                     {
                         //PdfDocument pdfDocument = new PdfDocument();
                         //byte [] file = 
-                        System.IO.File.WriteAllBytes(saveFileDialog.FileName + ".pdf", report.Content);
+                        System.IO.File.WriteAllBytes(saveFileDialog.FileName, report.Content);
+                        MessageBox.Show("Downloaded Successfully, File Location: " + saveFileDialog.FileName, "Saved!", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
                     }
                   
                     

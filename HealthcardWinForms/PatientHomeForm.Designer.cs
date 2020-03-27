@@ -34,6 +34,8 @@
             this.prescriptionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MyPrescriptionMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewMyLabReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -53,10 +55,11 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.prescriptionToolStripMenuItem});
+            this.prescriptionToolStripMenuItem,
+            this.labReportsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1504, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1504, 28);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -65,7 +68,7 @@
             this.prescriptionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MyPrescriptionMenuItem});
             this.prescriptionToolStripMenuItem.Name = "prescriptionToolStripMenuItem";
-            this.prescriptionToolStripMenuItem.Size = new System.Drawing.Size(101, 26);
+            this.prescriptionToolStripMenuItem.Size = new System.Drawing.Size(101, 24);
             this.prescriptionToolStripMenuItem.Text = "Prescription";
             // 
             // MyPrescriptionMenuItem
@@ -84,6 +87,21 @@
             this.pictureBox1.Size = new System.Drawing.Size(24, 24);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            // 
+            // labReportsToolStripMenuItem
+            // 
+            this.labReportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewMyLabReportsToolStripMenuItem});
+            this.labReportsToolStripMenuItem.Name = "labReportsToolStripMenuItem";
+            this.labReportsToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
+            this.labReportsToolStripMenuItem.Text = "Lab Reports";
+            // 
+            // viewMyLabReportsToolStripMenuItem
+            // 
+            this.viewMyLabReportsToolStripMenuItem.Name = "viewMyLabReportsToolStripMenuItem";
+            this.viewMyLabReportsToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
+            this.viewMyLabReportsToolStripMenuItem.Text = "View My Lab Reports";
+            this.viewMyLabReportsToolStripMenuItem.Click += new System.EventHandler(this.viewMyLabReportsToolStripMenuItem_Click);
             // 
             // PatientHomeForm
             // 
@@ -109,5 +127,7 @@
         private System.Windows.Forms.ToolStripMenuItem prescriptionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MyPrescriptionMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem labReportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewMyLabReportsToolStripMenuItem;
     }
 }

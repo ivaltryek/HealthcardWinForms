@@ -50,6 +50,37 @@ namespace HealthcardWinForms
             }
         }
 
+        public void ViewPatientPrescriptionForDoctor(string PatientID)
+        {
+            using (DatabaseContext databaseContext = new DatabaseContext())
+            {
+                try
+                {
+                    var list = databaseContext.Prescriptions.Where(p => p.PatientID == PatientID).ToList();
+                    if (!list.Any())
+                    {
+                        MessageBox.Show("No Prescriptions Found", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    foreach (var pItem in list)
+                    {
+                        ListViewItem listViewItem = new ListViewItem(pItem.ID.ToString());
+                        listViewItem.SubItems.Add(pItem.PatientID.ToString());
+                        listViewItem.SubItems.Add(pItem.PatientName.ToString());
+                        listViewItem.SubItems.Add(pItem.MedicineID.ToString());
+                        listViewItem.SubItems.Add(pItem.Date.ToString());
+                        PrescriptionListView.Items.Add(listViewItem);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Exception Occurred at ViewPrescritionForPatient() " + ex.ToString());
+                }
+
+
+            }
+        }
+
         public void ViewPrescriptionOfDoctor()
         {
             using (DatabaseContext databaseContext = new DatabaseContext())

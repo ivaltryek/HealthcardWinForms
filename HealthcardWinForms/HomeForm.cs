@@ -72,5 +72,12 @@ namespace HealthcardWinForms
             viewPrescriptionForm.ViewPrescriptionOfDoctor();
             viewPrescriptionForm.ShowDialog(this);
         }
+
+        private void viewPatientDataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SearchPatientHistoryForm searchPatientHistoryForm = new SearchPatientHistoryForm();
+            searchPatientHistoryForm.Tag = this;
+            searchPatientHistoryForm.ShowDialog(this);
+        }
     }
 }

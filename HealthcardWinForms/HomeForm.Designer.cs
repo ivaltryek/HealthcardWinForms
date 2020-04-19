@@ -35,6 +35,7 @@
             this.prescriptionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myWrittenPrescriptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewPatientDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +65,8 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.prescriptionToolStripMenuItem});
+            this.prescriptionToolStripMenuItem,
+            this.viewPatientDataToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1504, 28);
@@ -93,6 +95,13 @@
             this.myWrittenPrescriptionsToolStripMenuItem.Size = new System.Drawing.Size(253, 26);
             this.myWrittenPrescriptionsToolStripMenuItem.Text = "My Written Prescriptions";
             this.myWrittenPrescriptionsToolStripMenuItem.Click += new System.EventHandler(this.myWrittenPrescriptionsToolStripMenuItem_Click);
+            // 
+            // viewPatientDataToolStripMenuItem
+            // 
+            this.viewPatientDataToolStripMenuItem.Name = "viewPatientDataToolStripMenuItem";
+            this.viewPatientDataToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
+            this.viewPatientDataToolStripMenuItem.Text = "View Patient Data";
+            this.viewPatientDataToolStripMenuItem.Click += new System.EventHandler(this.viewPatientDataToolStripMenuItem_Click);
             // 
             // HomeForm
             // 
@@ -125,5 +134,6 @@
         private System.Windows.Forms.ToolStripMenuItem prescriptionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem myWrittenPrescriptionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewPatientDataToolStripMenuItem;
     }
 }

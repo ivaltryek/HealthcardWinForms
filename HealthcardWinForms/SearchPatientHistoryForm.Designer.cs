@@ -126,6 +126,7 @@
             this.reportsSearchButton.TabIndex = 17;
             this.reportsSearchButton.Text = "View Reports";
             this.reportsSearchButton.UseVisualStyleBackColor = true;
+            this.reportsSearchButton.Click += new System.EventHandler(this.reportsSearchButton_Click);
             // 
             // SearchPatientHistoryForm
             // 

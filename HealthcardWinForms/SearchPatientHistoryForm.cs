@@ -44,5 +44,14 @@ namespace HealthcardWinForms
             viewPrescriptionForm.ShowDialog(this);
 
         }
+
+        private void reportsSearchButton_Click(object sender, EventArgs e)
+        {
+            string patientID = ForPatientTextBox.Text.ToString().Split('(', ')')[1];
+            ViewReportForm viewReportForm = new ViewReportForm();
+            viewReportForm.ViewReports(patientID, true);
+            viewReportForm.Tag = this;
+            viewReportForm.ShowDialog(this);
+        }
     }
 }
